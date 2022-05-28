@@ -1,7 +1,8 @@
 <template>
-  <div class="nav-wrapper">
-    <div class="content">我是money</div>
-    <Nav />
+  <div>
+    <Layout>
+      <p>我是money</p>
+    </Layout>
   </div>
 </template>
 
@@ -11,16 +12,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.nav-wrapper {
-  border: 1px solid green;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-.content {
-  border: 1px solid blue;
-  overflow: auto;
-  flex-grow: 1;
-}
-</style>

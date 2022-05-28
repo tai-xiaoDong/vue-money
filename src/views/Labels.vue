@@ -1,7 +1,8 @@
 <template>
   <div>
-    我是labels
-    <Nav />
+    <Layout>
+      <p>我是labels</p>
+    </Layout>
   </div>
 </template>
 
@@ -11,5 +12,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>

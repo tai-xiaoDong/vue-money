@@ -1,9 +1,11 @@
 <template>
   <div>
-    我是statistics
-    <Nav />
+    <Layout>
+      <p>我是statistics</p>
+    </Layout>
   </div>
 </template>
+
 
 <script lang="ts">
 export default {
@@ -11,5 +13,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
