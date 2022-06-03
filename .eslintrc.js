@@ -14,8 +14,11 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'vue/multi-word-component-names': 0
+    'vue/multi-word-component-names': 0,
     //解决报错git
+  },
+  globals: {  //与上方的rules是同级的
+    "__WebpackModuleApi": true
   },
   overrides: [
     {
