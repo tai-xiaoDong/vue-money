@@ -28,7 +28,7 @@ export default {
 // scoped 作用是限制特template中的class属性仅在本组件有效
 nav {
   display: flex;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   flex-direction: row;
   font-size: 12px;
   > .item {

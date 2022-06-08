@@ -1,2 +1,10 @@
 $font-hei: Helvetica, sans-serif;
 $red: #a7262a;
+
+%clearFix {
+    &::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}
