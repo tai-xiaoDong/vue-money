@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/style/helper.scss";
+@import "@/assets/style/helper.scss";
 .numberPad {
   .output {
     font-size: 36px;
