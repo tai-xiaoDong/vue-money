@@ -18,7 +18,8 @@ module.exports = {
     //解决报错git
   },
   globals: {  //与上方的rules是同级的
-    "__WebpackModuleApi": true
+    "__WebpackModuleApi": true,
+    "RecordItem": true
   },
   overrides: [
     {

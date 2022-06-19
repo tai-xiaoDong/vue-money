@@ -16,7 +16,6 @@
       <button @click="ok" class="ok">OK</button>
       <button class="zero" @click="inputContent">0</button>
       <button @click="inputContent">.</button>
-      {{ value }}
     </div>
   </div>
 </template>
