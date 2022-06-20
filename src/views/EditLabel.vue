@@ -1,13 +1,22 @@
 <template>
-  <layout> 编辑标签 </layout>
+  <layout>
+    <div>
+      <Icon name="left" />
+      <span>编辑标签</span>
+    </div>
+    <Notes fieldName="标签" placeholder="请在此处输入标签名" />
+  </layout>
 </template>
 
 <script lang="ts">
-import tagListModel from "@/models/tagListModel";
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
+import tagListModel from "@/models/tagListModel";
+import Notes from "../components/Money/Notes.vue";
 
-@Component
+@Component({
+  components: { Notes },
+})
 export default class EditLabel extends Vue {
   created() {
     const id = this.$route.params.id;
@@ -18,7 +27,7 @@ export default class EditLabel extends Vue {
     if (tag) {
       console.log(tag);
     } else {
-      this.$router.replace("/404"); //用来路由重定向
+      this.$router.replace("/404"); //router用来路由重定向
     }
   }
 }
