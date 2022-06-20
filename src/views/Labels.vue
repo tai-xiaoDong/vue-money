@@ -1,11 +1,16 @@
 <template>
   <Layout>
-    <ol class="tags">
-      <li v-for="tag in tags" :key="tag.id">
+    <div class="tags">
+      <router-link
+        v-for="tag in tags"
+        :key="tag.id"
+        :to="`/labels/edit/${tag.id}`"
+        class="tag"
+      >
         <span>{{ tag.name }}</span>
         <Icon name="right" />
-      </li>
-    </ol>
+      </router-link>
+    </div>
     <div class="createTag-wrapper">
       <button class="createTag" @click="createTag">新建标签</button>
     </div>
@@ -13,20 +18,20 @@
 </template>
 
 <script lang="ts">
-import tagLIstModel from "@/models/tagLIstModel";
+import tagListModel from "@/models/tagListModel";
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 
-tagLIstModel.fetch();
+tagListModel.fetch();
 
 @Component
 export default class Labels extends Vue {
-  tags = tagLIstModel.data;
+  tags = tagListModel.data;
 
   createTag() {
     const name = window.prompt("请输入标签名");
     if (name) {
-      const message = tagLIstModel.create(name);
+      const message = tagListModel.create(name);
       if (message === "duplicated") {
         window.alert("标签名重复了");
       } else if (message === "success") {
@@ -42,7 +47,7 @@ export default class Labels extends Vue {
   background: white;
   font-size: 16px;
   padding-left: 16px;
-  > li {
+  > .tag {
     min-height: 44px;
     display: flex;
     align-items: center;

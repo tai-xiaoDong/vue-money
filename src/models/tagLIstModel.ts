@@ -12,7 +12,7 @@ type TagListModel = {
     create: (name: string) => 'success' | 'duplicated';
     save: () => void;
 }
-const tagLIstModel: TagListModel = {
+const tagListModel: TagListModel = {
     data: [],
     fetch() {
         this.data = JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]');
@@ -29,7 +29,6 @@ const tagLIstModel: TagListModel = {
         this.data.push({ id: name, name: name });
         this.save()
         return 'success';
-
     }
 };
-export default tagLIstModel;
+export default tagListModel;
