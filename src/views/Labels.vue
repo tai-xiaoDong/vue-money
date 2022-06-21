@@ -12,19 +12,20 @@
       </router-link>
     </div>
     <div class="createTag-wrapper">
-      <button class="createTag" @click="createTag">新建标签</button>
+      <Dbutton class="createTag" @click="createTag">新建标签</Dbutton>
     </div>
   </Layout>
 </template>
 
 <script lang="ts">
 import tagListModel from "@/models/tagListModel";
+import Dbutton from "@/components/Dbutton.vue";
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 
 tagListModel.fetch();
 
-@Component
+@Component({ components: { Dbutton } })
 export default class Labels extends Vue {
   tags = tagListModel.data;
 
@@ -59,7 +60,6 @@ export default class Labels extends Vue {
     }
   }
 }
-
 .createTag {
   background: #767676;
   color: white;
