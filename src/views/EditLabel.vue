@@ -1,15 +1,20 @@
 <template>
   <layout>
     <div class="navBar">
-      <Icon class="leftIcon" name="left" />
+      <Icon class="leftIcon" name="left" @click="goBack" />
       <span class="title">编辑标签</span>
       <div class="rightIcon"></div>
     </div>
     <div class="form-wrapper">
-      <FormItem fieldName="标签" placeholder="请在此处输入标签名" />
+      <FormItem
+        :value="tag.name"
+        @update:value="update"
+        fieldName="标签"
+        placeholder="请在此处输入标签名"
+      />
     </div>
     <div class="button-wrapper">
-      <Dbutton>删除标签</Dbutton>
+      <Dbutton @click="remove">删除标签</Dbutton>
     </div>
   </layout>
 </template>
@@ -25,6 +30,7 @@ import Dbutton from "../components/Dbutton.vue";
   components: { FormItem, Dbutton },
 })
 export default class EditLabel extends Vue {
+  tag?: { id: string; name: string } = undefined;
   created() {
     const id = this.$route.params.id;
     //route用来获取路由的信息
@@ -32,10 +38,23 @@ export default class EditLabel extends Vue {
     const tags = tagListModel.data;
     const tag = tags.filter((t) => t.id === id)[0];
     if (tag) {
-      console.log(tag);
+      this.tag = tag;
     } else {
       this.$router.replace("/404"); //router用来路由重定向
     }
+  }
+  update(name: string) {
+    if (this.tag) {
+      tagListModel.update(this.tag.id, name);
+    }
+  }
+  remove() {
+    if (this.tag) {
+      tagListModel.remove(this.tag.id);
+    }
+  }
+  goBack() {
+    this.$router.back();
   }
 }
 </script>
