@@ -9,7 +9,7 @@
       <FormItem
         :value="tag.name"
         @update:value="update"
-        fieldName="标签"
+        fieldName="标签名"
         placeholder="请在此处输入标签名"
       />
     </div>
@@ -30,7 +30,7 @@ import Dbutton from "../components/Dbutton.vue";
   components: { FormItem, Dbutton },
 })
 export default class EditLabel extends Vue {
-  tag?: { id: string; name: string } = undefined;
+  tag!: { id: string; name: string };
   created() {
     const id = this.$route.params.id;
     //route用来获取路由的信息
