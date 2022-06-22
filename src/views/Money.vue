@@ -10,7 +10,6 @@
       />
     </div>
     <Tags :dataSource.sync="tags" @update:value="onUpdateTags" />
-    {{ recordList }}
   </Layout>
 </template>
 
