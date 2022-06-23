@@ -23,11 +23,9 @@ import Dbutton from "@/components/Dbutton.vue";
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
 
-tagListModel.fetch();
-
 @Component({ components: { Dbutton } })
 export default class Labels extends Vue {
-  tags = tagListModel.data;
+  tags = window.tagList;
 
   createTag() {
     const name = window.prompt("请输入标签名");
