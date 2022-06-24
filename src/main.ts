@@ -8,15 +8,11 @@ import Layout from './components/Layout.vue'
 import Icon from "./components/Icon.vue";
 
 
-
 Vue.config.productionTip = false//关闭提示
 
 Vue.component('Nav', Nav);//注意component的书写方式
 Vue.component('Layout', Layout);
 Vue.component('Icon', Icon);
-
-
-
 
 
 new Vue({
