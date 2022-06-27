@@ -19,18 +19,20 @@
 
 <script lang="ts">
 import Dbutton from "@/components/Dbutton.vue";
-import store from "@/store/index2";
-import Vue from "vue";
-import { Component } from "vue-property-decorator";
 
-@Component({ components: { Dbutton } })
-export default class Labels extends Vue {
-  tags = store.tagList;
-  createTag() {
-    const name = window.prompt("请输入标签名");
-    if (name) {
-      store.createTag(name);
-    }
+import { mixins } from "vue-class-component";
+import { Component } from "vue-property-decorator";
+import { TagHelper } from "../mixins/TagHelper";
+
+@Component({
+  components: { Dbutton },
+})
+export default class Labels extends mixins(TagHelper) {
+  get tags() {
+    return this.$store.state.tagList;
+  }
+  beforeCreate() {
+    this.$store.commit("fetchTags");
   }
 }
 </script>
