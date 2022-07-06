@@ -18,17 +18,6 @@
   </Layout>
 </template>
 
-<style scoped lang="scss">
-::v-deep .type-tabs-item {
-  background: white;
-  &.selected {
-    background: #c4c4c4;
-    &::after {
-      display: none;
-    }
-  }
-}
-</style>
 
 <script lang="ts">
 import Vue from "vue";
@@ -47,3 +36,18 @@ export default class Statistics extends Vue {
   recordTypeList = recordTypeList;
 }
 </script>
+
+<style scoped lang="scss">
+::v-deep .type-tabs-item {
+  background: white;
+  &.selected {
+    background: #c4c4c4;
+    &::after {
+      display: none;
+    }
+  }
+}
+::v-deep li.interval-tabs-item {
+  height: 48px;
+}
+</style>
