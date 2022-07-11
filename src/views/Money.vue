@@ -19,7 +19,7 @@ import NumberPad from "@/components/Money/NumberPad.vue";
 import Tags from "../components/Money/Tags.vue";
 import { Component } from "vue-property-decorator";
 import FormItem from "../components/Money/FormItem.vue";
-import recordTypeList from "../constants/recordTypeLIst";
+import recordTypeList from "@/constants/recordTypeList";
 import Tabs from "../components/Tabs.vue";
 
 @Component({
@@ -50,7 +50,7 @@ export default class Money extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
 .layout-content {
   display: flex;
   flex-direction: column-reverse;
